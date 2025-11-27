@@ -1,0 +1,1970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+/*font possibili */
+.anton-sc-regular-fw800 {
+    font-family: var(--font-family-hover-cpi);
+    font-weight: 800;
+    font-style: var(--font-style-hover-cpi);
+  }
+
+/*text {color:black}*/
+
+
+
+
+
+  /*VAR*/
+  :root {
+--prov-hover-opacity:0.95;
+
+--font-size-hover-cpi:103px;
+--font-family-hover-cpi:"Anton SC", sans-serif;
+--font-weight-hover-cpi:800;
+--opacity-hover-cpi:0.3;
+--font-style-hover-cpi:normal;
+
+--font-size-hover-prov:25px;
+--opacity-hover-prov:0.8;
+--color-hover-prov:#130303;
+
+--color-hover-cpi: #fcfc05;
+
+--font-size-TITOLO:500px;
+--opacity-TITOLO:0.8;
+--color-TITOLO:#130303;
+
+--font-size-Commento:25px;
+
+--font-size-textFlussi:24px;
+--font-size-Totale-Flussi:200px;
+  }
+
+
+
+
+/* visualiz hoover nomi CPI x provincia*/
+
+
+html:has(rect.VARESE:hover) rect.VARESE  {opacity: var(--prov-hover-opacity);}
+html:has(rect.SONDRIO:hover) rect.SONDRIO  {opacity: var(--prov-hover-opacity);}
+html:has(rect.BERGAMO:hover) rect.BERGAMO  {opacity: var(--prov-hover-opacity);}
+html:has(rect.MONZA_E_BRIANZA:hover) rect.MONZA_E_BRIANZA  {opacity: var(--prov-hover-opacity);}
+html:has(rect.BRESCIA:hover) rect.BRESCIA  {opacity: var(--prov-hover-opacity);}
+html:has(rect.MILANO:hover) rect.MILANO  {opacity: var(--prov-hover-opacity);}
+html:has(rect.MANTOVA:hover) rect.MANTOVA  {opacity: var(--prov-hover-opacity);}
+html:has(rect.LODI:hover) rect.LODI  {opacity: var(--prov-hover-opacity);}
+html:has(rect.COMO:hover) rect.COMO  {opacity: var(--prov-hover-opacity);}
+html:has(rect.LECCO:hover) rect.LECCO  {opacity: var(--prov-hover-opacity);}
+html:has(rect.CREMONA:hover) rect.CREMONA  {opacity: var(--prov-hover-opacity);}
+html:has(rect.PAVIA:hover) rect.PAVIA  {opacity: var(--prov-hover-opacity);}
+
+/* segnalo il quadrato in hoover */
+
+ html:has(rect#ALBINO:hover) rect#ALBINO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#APPIANO_GENTILE:hover) rect#APPIANO_GENTILE{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#BERGAMO:hover) rect#BERGAMO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#BORMIO:hover) rect#BORMIO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#BRENO:hover) rect#BRENO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#BRESCIA:hover) rect#BRESCIA{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#BUSTO_ARSIZIO:hover) rect#BUSTO_ARSIZIO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#CANTÙ:hover) rect#CANTÙ{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#CASTIGLIONE_DELLE_STIVIERE:hover) rect#CASTIGLIONE_DELLE_STIVIERE{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#CESANO_MADERNO:hover) rect#CESANO_MADERNO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#CHIAVENNA:hover) rect#CHIAVENNA{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#CLUSONE:hover) rect#CLUSONE{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#CODOGNO:hover) rect#CODOGNO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#COMO:hover) rect#COMO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#CORSICO:hover) rect#CORSICO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#CREMA:hover) rect#CREMA{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#CREMONA:hover) rect#CREMONA{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#DESENZANO_DEL_GARDA:hover) rect#DESENZANO_DEL_GARDA{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#ERBA:hover) rect#ERBA{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#GALLARATE_t_SESTO_CALENDE:hover) rect#GALLARATE_t_SESTO_CALENDE{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#GRUMELLO_DEL_MONTE:hover) rect#GRUMELLO_DEL_MONTE{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#ISEO_t_PALAZZOLO_SULLaOGLIO:hover) rect#ISEO_t_PALAZZOLO_SULLaOGLIO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#LAVENO_MOMBELLO:hover) rect#LAVENO_MOMBELLO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#LECCO:hover) rect#LECCO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#LEGNANO:hover) rect#LEGNANO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#LENO:hover) rect#LENO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#LODI:hover) rect#LODI{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#LOVERE:hover) rect#LOVERE{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#LUINO:hover) rect#LUINO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#MAGENTA:hover) rect#MAGENTA{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#MANTOVA:hover) rect#MANTOVA{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#MELZO:hover) rect#MELZO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#MENAGGIO:hover) rect#MENAGGIO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#MERATE:hover) rect#MERATE{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#MILANO:hover) rect#MILANO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#MONZA:hover) rect#MONZA{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#MORBEGNO:hover) rect#MORBEGNO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#NORD_MILANO:hover) rect#NORD_MILANO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#ORZINUOVI:hover) rect#ORZINUOVI{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#PAVIA:hover) rect#PAVIA{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#PONTE_SAN_PIETRO:hover) rect#PONTE_SAN_PIETRO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#RHO:hover) rect#RHO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#ROMANO_DI_LOMBARDIA:hover) rect#ROMANO_DI_LOMBARDIA{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#ROZZANO:hover) rect#ROZZANO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#SALÒ:hover) rect#SALÒ{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#SAN_DONATO_MILANESE:hover) rect#SAN_DONATO_MILANESE{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#SAREZZO:hover) rect#SAREZZO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#SARONNO:hover) rect#SARONNO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#SEREGNO:hover) rect#SEREGNO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#SONDRIO:hover) rect#SONDRIO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#SORESINA:hover) rect#SORESINA{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#SUZZARA:hover) rect#SUZZARA{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#TIRANO:hover) rect#TIRANO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#TRADATE:hover) rect#TRADATE{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#TRESCORE_BALNEARIO:hover) rect#TRESCORE_BALNEARIO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#TREVIGLIO:hover) rect#TREVIGLIO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#VARESE:hover) rect#VARESE{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#VIADANA:hover) rect#VIADANA{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#VIGEVANO:hover) rect#VIGEVANO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#VIMERCATE:hover) rect#VIMERCATE{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#VOGHERA:hover) rect#VOGHERA{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+ html:has(rect#ZOGNO:hover) rect#ZOGNO{fill: var(--color-hover-prov);opacity: var(--opacity-hover-cpi);}
+
+
+/*histo*/
+#yAxis .domain {opacity: 0}
+
+/* testi volanti*/
+.TitoloSfondo, .LEGENDAsfondo, .totaliLegenda, #yAxis .tick text
+ {font-family: var(--font-family-hover-cpi);
+    font-weight: var(--font-weight-hover-cpi);
+    font-style: var(--font-style-hover-cpi);}
+
+.nomeCpi {font-size: var(--font-size-hover-cpi);
+    font-family: var(--font-family-hover-cpi);
+    font-weight: var(--font-weight-hover-cpi);
+    font-style: var(--font-style-hover-cpi);
+    /*opacity: var(--opacity-hover-cpi);*/
+}
+
+.nomeProv, .LEGENDA , .Titolo_Histo, .TipoCpiSede{/*font-size: var(--font-size-hover-prov);*/
+    font-family: var(--font-family-hover-cpi);
+    font-weight: var(--font-weight-hover-cpi);
+    font-style: var(--font-style-hover-cpi);
+    opacity: var(--opacity-hover-prov);
+    fill: var(--color-hover-prov);
+}
+.Titolo_Histo {fill: green; opacity:.8; font-size: 30px;}
+
+.nomeProv {font-size: var(--font-size-hover-prov);}
+.TITOLO {/*font-size: var(--font-size-TITOLO);*/
+    font-family: var(--font-family-hover-cpi);
+    font-weight: var(--font-weight-hover-cpi);
+    font-style: var(--font-style-hover-cpi);
+    opacity: var(--opacity-TITOLO);
+    fill: var(--color-TITOLO);
+}
+
+
+.textFlussi ,
+.textFlussiPc
+{
+    font-family: var(--font-family-hover-cpi);
+    font-weight: var(--font-weight-hover-cpi);
+    font-style: var(--font-style-hover-cpi);
+    opacity: var(--opacity-TITOLO);
+    fill: var(--color-TITOLO);
+    font-size: var(--font-size-Commento);
+}
+
+.textFlussi, .textFlussiPc {font-size: var(--font-size-textFlussi);}
+
+
+/* properties of axis histo*/
+#yAxis .tick text {  
+        fill: 'black';  
+       font: 18px sans-serif;  
+        text-anchor: end;  
+    }  
+
+
+    </style>
+    <script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js"></script>
+</head>
+<body>
+    <div id="my_dataviz"></div>
+
+    <!--- script funzioni.js --->  
+    <script>   
+        // funzioni js
+// funzioni
+trovaIdXY =(nodolist)=> {
+    let strId="";
+    let x="";
+    let y="";
+    let strClass=";"
+    
+    if(nodolist[4]){
+        //Id dell'elemento
+        strId = nodolist[4].id
+    // position id-element
+    if (strId)
+    {var element = document.getElementById(strId);
+    var position = element.getBoundingClientRect();
+    x = position.left; y = position.top;
+    //strClass =document.getElementById('strId').getAttribute('class');
+    //non ha funzionato
+        }
+    }
+    return [strId,x,y,strClass];
+};
+
+function numberWithDots(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+
+//return la prima riga-oggetto del data-json
+// che soddisfa la condizione di uguaglianza di campo e valore
+trovaRowObjectJson= (Data,campo,ValueFind) =>{
+    let RowObject={};
+    //console.log(Data)
+    for (let i=0;i<Data.length;i++){
+    //console.log('-->'+i+"  "+Data[i][campo]) //return lname1..2..3
+    if (Data[i][campo] === ValueFind){//console.log('---> numero object (conta da zero) = ' +i);
+         RowObject = Data[i]}
+    //return -1 //se non ha trovato nulla
+    
+    } return RowObject}
+
+
+    </script>
+    <!---sc ript histoOr-2.js -->
+    <script>
+        
+
+
+
+const { scaleBand, scaleLinear, min, max, extent, axisBottom, axisLeft, group} = d3; //
+
+
+
+//
+
+
+const HISTO = (selection) =>{
+    let xtestoTitolo;
+    let ytestoTitolo;
+    let opacityRectHisto;
+    let colorRectHisto;
+    let testoTitolo;
+    let classeTitolo;
+    let xValue;
+    let yValue;
+    let margin;
+    let data;
+    let padding_y;
+    let campo;
+    let sogliaFluxHisto;
+    let testoTipoHisto;
+    let classTipoHisto;
+    let XtestoTipoHisto;
+    let YtestoTipoHisto;
+    
+   
+    
+    const my = (selection) => {
+        //dati -verifico 
+console.log("--->")      
+console.log(data)
+
+       
+        //-------------------------------------------------------------
+        //marksHisto = MARKShisto(data,campo)    //zero e zero non importa ricostruire la posizione del quadrato<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+       // marksHisto=[{"WidthHisto":150,"textCpi":"Como"},{"WidthHisto":250,"textCpi":"Luino"},{"WidthHisto":50,"textCpi":"Breno"}]
+        //-------------------------------------------------------------
+        ////console.log(marksHisto)//
+        //
+//    
+        //       ██████╗ ███████╗███╗   ███╗ ██████╗ ██╗   ██╗███████╗
+        //       ██╔══██╗██╔════╝████╗ ████║██╔═══██╗██║   ██║██╔════╝
+        //       ██████╔╝█████╗  ██╔████╔██║██║   ██║██║   ██║█████╗  
+        //       ██╔══██╗██╔══╝  ██║╚██╔╝██║██║   ██║╚██╗ ██╔╝██╔══╝  
+        //       ██║  ██║███████╗██║ ╚═╝ ██║╚██████╔╝ ╚████╔╝ ███████╗
+        //       ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝ ╚═════╝   ╚═══╝  ╚══════╝
+                                                                                           
+                                      selection.select("g#histo").remove() 
+        
+        //----------------------------------------------------------------------------fine remove
+
+
+
+
+ // funzione di assegnazione dei valori dal campo flussi di volta in volta selezionato
+
+ //const xValueFlussi = (d) => +`${d[campo]}`;
+
+
+ //
+ //         ██████╗  █████╗ ████████╗ █████╗      ██████╗ ██████╗  ██████╗ ██╗   ██╗██████╗ 
+ //         ██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗    ██╔════╝ ██╔══██╗██╔═══██╗██║   ██║██╔══██╗
+ //         ██║  ██║███████║   ██║   ███████║    ██║  ███╗██████╔╝██║   ██║██║   ██║██████╔╝
+ //         ██║  ██║██╔══██║   ██║   ██╔══██║    ██║   ██║██╔══██╗██║   ██║██║   ██║██╔═══╝ 
+ //         ██████╔╝██║  ██║   ██║   ██║  ██║    ╚██████╔╝██║  ██║╚██████╔╝╚██████╔╝██║     
+ //         ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝     ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝     
+ //                                                                                        
+ 
+         //trasformo i dati iniziali selezionando i dati olotre una certa soglia con la funzione group in d3.js 
+         //(che produce dei sottogruppi con true e false )e poi get(true)
+         //var grouped_data = d3.group(data, d => d.name)
+         var data1 = data
+         data1= d3.group(data1, d => campo(d) >= sogliaFluxHisto)       //(d) => +`${d[campo]}`>sogliaFluxHisto) <----funziona anche così
+         data1 = data1.get(true)
+         ////console.log(data)
+
+if(data1){     //se esistono dei dati oltre la soglia ---> visualizza l'histo
+        console.log(data1.length)
+        console.log('in data')
+        // verifico campo
+        //console.log(campo)
+        //------------------------------------------------------------
+        const innerWidth = width-margin.left-margin.right;
+        const innerHeight = height - margin.top - margin.bottom;
+        //console.log(margin.top)
+        //scale
+       
+        const xScale = scaleLinear()
+        .domain([sogliaFluxHisto,max(data1,campo)]) //
+        .range([sogliaFluxHisto,innerWidth]);
+                                       //console.log(xScale.domain())
+        const yScale = scaleBand()
+        .domain(data1.map(yValue))
+        .range([sogliaFluxHisto,innerHeight])
+        .padding(padding_y);
+                                       //console.log(yScale.domain())
+
+      
+        
+                                       //---------fine scale
+        //asse - nota che la visione normale è copovolta di 90°
+        //       di conseguenza l'asse x si trova a sinistra come 
+        //       nomalmente la y
+        //remove
+
+
+
+        const yAxis = axisLeft(yScale);
+        const xAxis = axisBottom(xScale).tickSize(5);
+
+        //svg appeso a un g
+        const g = selection.append('g').attr('id','histo')
+          .attr('transform',`translate(${margin.left},${margin.top})`)
+
+        //produco un altro g interno a g e richiamo l'asse-y costruito dalla funzione axisLeft
+        g.append('g').attr('id','yAxis').call(yAxis)
+        //ASSE X
+        g.append('g').call( xAxis )
+        .attr('transform',`translate(0,${innerHeight})`)
+
+        
+
+        //produco i rettangoli
+        g.selectAll('rect.histo').data(data1)
+        .join('rect')//.enter().append('rect')
+        .attr('class','histo')
+        .attr('y',d => yScale(yValue(d)))
+        .attr('width',d => xScale(campo(d)))
+        .attr('height',yScale.bandwidth())
+        .style('fill',colorRectHisto)
+        .attr('opacity',opacityRectHisto)
+
+        
+        //titolo testo
+        g.selectAll('text.'+`${classeTitolo}`)
+        .data([null])
+        .join('text')
+        .attr('x',xtestoTitolo)//,x)
+        .attr('y',ytestoTitolo)//,y)
+        .attr('class',`${classeTitolo}`)
+        .text(`${testoTitolo}`)
+
+
+       //tipo histo testo
+       selection.selectAll('text.'+`${classTipoHisto}`)
+       .data([null])
+       .join('text')
+       .attr('x',XtestoTipoHisto)//,x)
+       .attr('y',YtestoTipoHisto)//,y)
+       .attr('class',`${classTipoHisto}`)
+       .text(`${testoTipoHisto}`)
+
+
+
+
+      } // fine if (data)   
+    
+    } //fine my
+
+    
+
+    my.XtestoTipoHisto = function(_){return arguments.length ? ((XtestoTipoHisto = _),my) : XtestoTipoHisto;}
+    my.YtestoTipoHisto = function(_){return arguments.length ? ((YtestoTipoHisto = _),my) : YtestoTipoHisto;}
+    my.testoTipoHisto = function(_){return arguments.length ? ((testoTipoHisto = _),my) : testoTipoHisto;}
+    my.classTipoHisto = function(_){return arguments.length ? ((classTipoHisto = _),my) : classTipoHisto;}
+    my.xtestoTitolo = function(_){return arguments.length ? ((xtestoTitolo = _),my) : xtestoTitolo;}
+    my.ytestoTitolo = function(_){return arguments.length ? ((ytestoTitolo = _),my) : ytestoTitolo;}
+    my.opacityRectHisto = function(_){return arguments.length ? ((opacityRectHisto = +_),my) : opacityRectHisto;}
+    my.colorRectHisto = function(_){return arguments.length ? ((colorRectHisto = _),my) : colorRectHisto;}
+    my.testoTitolo = function(_){return arguments.length ? ((testoTitolo = _),my) : testoTitolo;}
+    my.classeTitolo = function(_){return arguments.length ? ((classeTitolo = _),my) : classeTitolo;}
+    my.xValue = function(_){return arguments.length ? ((xValue = _),my) : xValue;}
+    my.yValue = function(_){return arguments.length ? ((yValue = _),my) : yValue;}
+    my.margin = function(_){return arguments.length ? ((margin = _),my) : margin;}
+    my.padding_y = function(_){return arguments.length ? ((padding_y = +_),my) : padding_y;}
+    my.campo = function(_){return arguments.length ? ((campo = _),my) : campo;}
+    my.sogliaFluxHisto = function(_){return arguments.length ? ((sogliaFluxHisto = +_),my) : sogliaFluxHisto;}
+    //data
+    my.data = function(_){return arguments.length ? ((data = _),my) : data;}
+    
+    
+    return my;
+    }
+    </script>
+
+    <!--- script showFluxDot.js -->
+    <script> 
+        
+//funzioni da D3
+//const {scaleLinear, min, max, extent, 
+//    axisBottom, axisLeft,
+//     selectAll, transition,
+//     } = d3; 
+
+
+
+
+
+
+const plotFluxDot = (selection) => {
+    //parameters
+    
+    let data;
+    let widthRect;
+    let heightRect;
+    let campo;
+    let sogliaFluxDot;
+    let xStrId;
+    let yStrId;
+    let strId;
+    
+    
+    
+    const my = (selection) => {
+    
+        
+    //cancello eventuali costruzioni    
+    selection.selectAll('.fluxDot').remove()
+    //------------data
+    //dataProva=[{'x':45,'y':35,'prova':20},{'x':145,'y':135,'prova':9},{'x':245,'y':235,'prova':20},{'x':345,'y':435,'prova':20},]
+    
+    //estraggo solo i casi con valori superiori alla soglia e non appartenenti al CPI selezionato
+    //sopra soglia
+    console.log(data.length)
+    
+    console.log(data)
+    
+    //const xValueFlussi = (d) => +`${d[campo]}`;
+    var data1 = data
+    data1 = d3.group(data1, d => campo(d) >= sogliaFluxDot)       //(d) => +`${d[campo]}`>sogliaFluxDot) <----funziona anche così
+    data1 = data1.get(true)
+    // se vi sono dati soprasoglia escludi i punti dello stesso cpi selezionato (visto che non vanno da nessuna parte)
+    if (data1){
+    data1 = d3.group(data1, d => d.textCpi != strId)
+    data1 = data1.get(true)}
+    
+    //-------------fine data1 - prima estrazione di gruppi
+    
+    //-----------transation function
+    const slow =  transition().duration(1000);
+    //----------fine transaction function
+    
+    
+    if(data1){  //se esistono i dati
+    
+         randomNumber = (min, max) => { return Math.random() * (max - min) + min;}
+    
+        //--------------------------------------------DATI - ricodifico e moltiplico
+        //costruisco un file dati + semplice
+        const datax = data1.map((d,i)=>({
+        
+            x:+d.x,  
+            y:+d.y,
+            //xStrId: +xStrId,
+            //yStrId: +yStrId,
+            value: +campo(d)
+        
+        }))
+    
+    
+        //---verifico
+    //console.log(datax)
+    //console.log(xStrId)
+    //console.log(yStrId)
+    
+        //------x simulare le quantità in movimento-------produco una moltiplicazione delle righe-punti ---uguale al valore
+        const result = [];
+    
+    let id = 0;
+    for (const row of datax) {
+        for (let i = 0; i < row.value; i++) {
+            const newRow = {
+                x: row.x,
+                y: row.y,
+                xStrId: +xStrId,//row.xStrId,
+                yStrId: +yStrId,//row.yStrId,
+                id: ++id, // but set this field and increase `id`
+            };
+            result.push(newRow);
+        }
+    }
+    
+    //console.log(result);
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        //----------------------------------------fine DATI - ricodifica
+    
+    //--------------------------------------plot
+    selection
+    .selectAll('circle.fluxDot')
+    .data(result)
+    .join(
+    enter => enter.append('circle')
+     
+    .attr('class','fluxDot')
+    .attr('cx',(d)=>randomNumber(d.x+widthRect/12,d.x+widthRect))//d.x+widthRect/2)// posizioniamo al centro del rettangolo
+    .attr('cy',(d)=>randomNumber(d.y+heightRect/12,d.y+heightRect))//posizioniamo al centro del rettangolo
+    .attr('r',1)
+    .attr('opacity',1)
+    .call(selection => {selection
+       .transition(slow).delay((d,i) => i*5) 
+        .attr('cx',d=>+d.xStrId+widthRect/2+20)
+        .attr('cy',d=>+d.yStrId+heightRect/2+25)
+        .attr('r',1)
+        .transition(slow).delay((d,i) => i*5) .attr('opacity',0)
+       })
+    ,
+    update => update.remove(),
+    //update => update.call(selection => {selection
+    //    .transition(slow).delay((d,i) => i*250) 
+    //     .attr('cx',d=>d.xStrId)//,x)
+    //     .attr('cy',d=>d.yStrId)//,y)
+    //    }),
+    exit => exit.remove()
+    
+    
+    )
+    
+    
+    } //------fine if data
+    
+    } //+++++++++++ fine my
+    my.strId = function(_){return arguments.length? ((strId = _),my) : strId;}
+    my.xStrId = function(_){return arguments.length? ((xStrId = +_),my) : xStrId;}
+    my.yStrId = function(_){return arguments.length? ((yStrId = +_),my) : yStrId;}
+    my.campo = function(_){return arguments.length? ((campo = _),my) : campo;}
+    my.sogliaFluxDot = function(_){return arguments.length? ((sogliaFluxDot = _),my) : sogliaFluxDot;}
+    my.widthRect = function(_){return arguments.length? ((widthRect = +_),my) : widthRect;}
+    my.heightRect = function(_){return arguments.length? ((heightRect = _),my) : heightRect;}
+    
+    // e data
+    my.data = function(_){return arguments.length? ((data = _),my) : data;}
+    
+    
+    
+    
+    
+    
+    
+    return my;
+    } //+++++++++++fine scatterPlot
+    </script>
+    
+    <!---showTextTransition.js-->
+    <script>
+//show testi con transition
+
+const TESTO_transition = (selection) =>{
+    let x;
+    let y;
+    let testo;
+    let classe;
+    let idTesto;
+    let fontSizeFinal;
+    let opacityFinal;
+    let duration;
+    
+    let colorInit;
+    let colorFinal;
+    let fontSizeInit;
+    let opacityInit;
+    let xFinal;
+    let yFinal;
+    let delay;
+    let data; //non usato
+    
+    const my = (selection) => {
+    
+    
+    
+    
+    const slow =  transition().duration(duration)
+    const margin = {top: 0, right: 0, bottom: 0, left: 0} //non usato
+    
+    //testo
+    //selection.selectAll('text.'+`${classe}${idTesto}`)
+    selection.selectAll('text#'+`${idTesto}.${classe}`)
+    .data([null])
+    .join(
+        enter => enter.append('text')
+                      .attr('height',200)
+                      //.attr('margin',margin.bottom)
+                      .attr('x',+x)//,x)
+                      .attr('y',+y)//,y)
+                      .attr('class',`${classe}`)
+                      .attr('id',`${idTesto}`)
+                      .style('font-size',fontSizeInit)
+                      .text(`${testo}`)
+                      .attr('opacity',opacityInit)
+                      .style('fill',colorInit)
+                     .call(selection => {selection
+                        .transition(slow).delay(delay) 
+                        .style('fill',colorFinal)
+                        .style('font-size',fontSizeFinal)
+                        .attr('x',xFinal)//,x)
+                        .attr('y',yFinal)//,y)
+                        .attr('opacity',opacityFinal)
+                        //.transition(slow).delay(delay)
+                        })
+                              ,
+        update =>update.remove(),
+        exit => exit.remove(),
+    )
+    
+    
+    
+    
+    
+    
+    } //fine my
+    
+    my.delay = function(_){return arguments.length ? ((delay = +_),my) : delay;}
+    my.yFinal = function(_){return arguments.length ? ((yFinal = +_),my) : yFinal;}
+    my.xFinal = function(_){return arguments.length ? ((xFinal = +_),my) : xFinal;}
+    my.opacityInit = function(_){return arguments.length ? ((opacityInit = +_),my) : opacityInit;}
+    my.fontSizeInit = function(_){return arguments.length ? ((fontSizeInit = _),my) : fontSizeInit;}
+    my.colorFinal = function(_){return arguments.length ? ((colorFinal = _),my) : colorFinal;}
+    my.colorInit = function(_){return arguments.length ? ((colorInit = _),my) : colorInit;}
+    my.opacityFinal = function(_){return arguments.length ? ((opacityFinal = +_),my) : opacityFinal;}
+    my.x = function(_){return arguments.length ? ((x = +_),my) : x;}
+    my.y = function(_){return arguments.length ? ((y = +_),my) : y;}
+    my.testo = function(_){return arguments.length ? ((testo = _),my) : testo;}
+    my.classe = function(_){return arguments.length ? ((classe = _),my) : classe;}
+    my.idTesto = function(_){return arguments.length ? ((idTesto = _),my) : idTesto;}
+    my.fontSizeFinal = function(_){return arguments.length ? ((fontSizeFinal = _),my) : fontSizeFinal;}
+    my.duration = function(_){return arguments.length ? ((duration = +_),my) : duration;}
+    my.data = function(_){return arguments.length ? ((data = _),my) : data;}
+    
+    return my;
+    }
+
+    </script>
+    
+    <!---showText.js-->
+    <script>
+//show testi 
+
+////funziona MA preferisco la seconda formulazione 
+//esempio:   TESTO(300,400,'CPI','TITOLO')
+//const TESTO = (x,y,testo,classe) =>{
+//    svg.selectAll('text.'+`${classe}`)
+//    .data([null])
+//    .join('text')
+//    .attr('x',+x)//,x)
+//    .attr('y',+y)//,y)
+//    .attr('class',`${classe}`)
+//    .text(`${testo}`)
+//}
+
+//+esplicita nell'espressione dei parametri in input
+//esempio:
+// testoTitolo = TESTO().x(300).y(400).testo('CPI').classe('TITOLO')
+//                svg.call(testoTitolo)
+const TESTO = (selection) =>{
+    let x;
+    let y;
+    let testo;
+    let classe;
+    let idTesto;
+    let size;
+    let opacity;
+    let data; //non usato
+    
+    const my = (selection) => {
+    
+    
+    const margin = {top: 0, right: 0, bottom: 0, left: 0} //non usato
+    
+    //testo
+    //selection.selectAll('text.'+`${classe}${idTesto}`)
+    selection.selectAll('text#'+`${idTesto}.${classe}`)
+    .data([null])
+    .join('text')
+    
+    .attr('height',200)
+    //.attr('margin',margin.bottom)
+    .attr('x',+x)//,x)
+    .attr('y',+y)//,y)
+    .attr('class',`${classe}`)
+    .attr('id',`${idTesto}`)
+    .style('font-size',size)
+    .text(`${testo}`)
+    .attr('opacity',opacity)
+    
+    
+    
+    
+    } //fine my
+    my.opacity = function(_){return arguments.length ? ((opacity = +_),my) : opacity;}
+    my.x = function(_){return arguments.length ? ((x = +_),my) : x;}
+    my.y = function(_){return arguments.length ? ((y = +_),my) : y;}
+    my.testo = function(_){return arguments.length ? ((testo = _),my) : testo;}
+    my.classe = function(_){return arguments.length ? ((classe = _),my) : classe;}
+    my.idTesto = function(_){return arguments.length ? ((idTesto = _),my) : idTesto;}
+    my.size = function(_){return arguments.length ? ((size = _),my) : size;}
+    my.data = function(_){return arguments.length ? ((data = _),my) : data;}
+    
+    return my;
+    }
+
+    </script>
+    
+    <!---dati.js-->
+    <script>
+        const { csv  } = d3;
+
+
+//esempio 
+
+//dati prova - marksHisto = MARKShisto(data,campoFlussi)    //zero e zero non importa ricostruire la posizione del quadrato<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+marksHisto=[{"WidthHisto":150,"textCpi":"Como"},{"WidthHisto":250,"textCpi":"Luino"},{"WidthHisto":50,"textCpi":"Breno"}]
+    
+
+//((((((((((((i dati))))))))))))
+
+//nota bene: ho cancellato nel gist l'ultima RIGA dei TITALI
+
+
+//
+////indirizzo dati-prov
+//const csvUrl = 'https://gist.githubusercontent.com/loridaniele/b6c4aee694ce61696104a54bab258caf/raw/50b68596d0908e71300c8a95e6c3349aef086769/tab1FlussiOrdReCp5.css'
+//////console.log(csvUrl)
+//const dataProv = csv(csvUrl);//, parseRow2);
+////
+////console.log(dataProv)
+//
+////costruzione coordinate x e y
+//const xVal =(d,i)=>(xOrigine+((i % nRow)* (widthRect+xPad)))
+//const yVal =(d,i)=>(yOrigine+((Math.trunc(i/nCol)+1) * (heightRect+yPad)))
+//costruisco una funzione MARKS
+
+parseRow = (d,i) =>{
+    return {
+        x:+xVal(d,i),  
+        y:+yVal(d,i),
+        textProv:d.provD.replace(/ /g,"_"),
+        textCpi:d.cpiD
+        .replace(/ /g,"_")
+        .replace(/'/g,"a")
+        .replace(/\-/g,"t"), 
+        //modifico il nome dei campi per sostiutire caratteri incompatibili
+        //vvx = vv.replace(" ","_")
+        //vvx = vvx.replace("'","a")
+        //vvx = vvx.replace("-","t")
+        TOTAL :+d['Total'],
+        LUINO: +d["LUINO"],
+    MENAGGIO: +d["MENAGGIO"],
+    CHIAVENNA: +d["CHIAVENNA"],
+    MORBEGNO: +d["MORBEGNO"],
+    SONDRIO: +d["SONDRIO"],
+    TIRANO: +d["TIRANO"],
+    BORMIO: +d["BORMIO"],
+    BRENO: +d["BRENO"],
+    LAVENO_MOMBELLO: +d["LAVENO MOMBELLO"],
+    COMO: +d["COMO"],
+    ERBA: +d["ERBA"],
+    LECCO: +d["LECCO"],
+    ALBINO: +d["ALBINO"],
+    CLUSONE: +d["CLUSONE"],
+    LOVERE: +d["LOVERE"],
+    SAREZZO: +d["SAREZZO"],
+    VARESE: +d["VARESE"],
+    TRADATE: +d["TRADATE"],
+    APPIANO_GENTILE: +d["APPIANO GENTILE"],
+    MERATE: +d["MERATE"],
+    ZOGNO: +d["ZOGNO"],
+    PONTE_SAN_PIETRO: +d["PONTE SAN PIETRO"],
+    TRESCORE_BALNEARIO: +d["TRESCORE BALNEARIO"],
+    ISEO_t_PALAZZOLO_SULLaOGLIO: +d["ISEO - PALAZZOLO SULL'OGLIO"],
+    GALLARATE_t_SESTO_CALENDE: +d["GALLARATE - SESTO CALENDE"],
+    SARONNO: +d["SARONNO"],
+    CANTÙ: +d["CANTÙ"],
+    CESANO_MADERNO: +d["CESANO MADERNO"],
+    SEREGNO: +d["SEREGNO"],
+    BERGAMO: +d["BERGAMO"],
+    GRUMELLO_DEL_MONTE: +d["GRUMELLO DEL MONTE"],
+    SALÒ: +d["SALÒ"],
+    BUSTO_ARSIZIO: +d["BUSTO ARSIZIO"],
+    LEGNANO: +d["LEGNANO"],
+    MONZA: +d["MONZA"],
+    VIMERCATE: +d["VIMERCATE"],
+    TREVIGLIO: +d["TREVIGLIO"],
+    ROMANO_DI_LOMBARDIA: +d["ROMANO DI LOMBARDIA"],
+    BRESCIA: +d["BRESCIA"],
+    DESENZANO_DEL_GARDA: +d["DESENZANO DEL GARDA"],
+    MAGENTA: +d["MAGENTA"],
+    RHO: +d["RHO"],
+    NORD_MILANO: +d["NORD MILANO"],
+    MELZO: +d["MELZO"],
+    CREMA: +d["CREMA"],
+    ORZINUOVI: +d["ORZINUOVI"],
+    MANTOVA: +d["MANTOVA"],
+    CASTIGLIONE_DELLE_STIVIERE: +d["CASTIGLIONE DELLE STIVIERE"],
+    VIGEVANO: +d["VIGEVANO"],
+    CORSICO: +d["CORSICO"],
+    MILANO: +d["MILANO"],
+    SAN_DONATO_MILANESE: +d["SAN DONATO MILANESE"],
+    SORESINA: +d["SORESINA"],
+    LENO: +d["LENO"],
+    VIADANA: +d["VIADANA"],
+    OSTIGLIA: +d["OSTIGLIA"],
+    VOGHERA: +d["VOGHERA"],
+    PAVIA: +d["PAVIA"],
+    ROZZANO: +d["ROZZANO"],
+    LODI: +d["LODI"],
+    CODOGNO: +d["CODOGNO"],
+    CREMONA: +d["CREMONA"],
+    CASALMAGGIORE: +d["CASALMAGGIORE"],
+    SUZZARA: +d["SUZZARA"] 
+    }
+}
+
+// x prova
+parseRowToCol = (d,i) =>{
+    return {
+        x:+xVal(d,i),  
+        y:+yVal(d,i),
+        textProv:d.provD.replace(/ /g,"_"),
+        textCpi:d.cpiD
+        .replace(/ /g,"_")
+        .replace(/'/g,"a")
+        .replace(/\-/g,"t"), 
+        //modifico il nome dei campi per sostiutire caratteri incompatibili
+        //vvx = vv.replace(" ","_")
+        //vvx = vvx.replace("'","a")
+        //vvx = vvx.replace("-","t")
+        
+        TOTAL :+d['Total'],
+        LUINO: +d["LUINO"],
+
+    }
+}
+
+
+const MARKS =(data,xVal,yVal)=>{
+const marks = data.map((d,i)=>({
+    
+    x:+xVal(d,i),  
+    y:+yVal(d,i),
+    textProv:d.provD.replace(/ /g,"_"),
+    textCpi:d.cpiD
+    .replace(/ /g,"_")
+    .replace(/'/g,"a")
+    .replace(/\-/g,"t"), 
+    //modifico il nome dei campi per sostiutire caratteri incompatibili
+    //vvx = vv.replace(" ","_")
+    //vvx = vvx.replace("'","a")
+    //vvx = vvx.replace("-","t")
+    TOTAL :+d['Total'],
+    LUINO: +d["LUINO"],
+MENAGGIO: +d["MENAGGIO"],
+CHIAVENNA: +d["CHIAVENNA"],
+MORBEGNO: +d["MORBEGNO"],
+SONDRIO: +d["SONDRIO"],
+TIRANO: +d["TIRANO"],
+BORMIO: +d["BORMIO"],
+BRENO: +d["BRENO"],
+LAVENO_MOMBELLO: +d["LAVENO MOMBELLO"],
+COMO: +d["COMO"],
+ERBA: +d["ERBA"],
+LECCO: +d["LECCO"],
+ALBINO: +d["ALBINO"],
+CLUSONE: +d["CLUSONE"],
+LOVERE: +d["LOVERE"],
+SAREZZO: +d["SAREZZO"],
+VARESE: +d["VARESE"],
+TRADATE: +d["TRADATE"],
+APPIANO_GENTILE: +d["APPIANO GENTILE"],
+MERATE: +d["MERATE"],
+ZOGNO: +d["ZOGNO"],
+PONTE_SAN_PIETRO: +d["PONTE SAN PIETRO"],
+TRESCORE_BALNEARIO: +d["TRESCORE BALNEARIO"],
+ISEO_t_PALAZZOLO_SULLaOGLIO: +d["ISEO - PALAZZOLO SULL'OGLIO"],
+GALLARATE_t_SESTO_CALENDE: +d["GALLARATE - SESTO CALENDE"],
+SARONNO: +d["SARONNO"],
+CANTÙ: +d["CANTÙ"],
+CESANO_MADERNO: +d["CESANO MADERNO"],
+SEREGNO: +d["SEREGNO"],
+BERGAMO: +d["BERGAMO"],
+GRUMELLO_DEL_MONTE: +d["GRUMELLO DEL MONTE"],
+SALÒ: +d["SALÒ"],
+BUSTO_ARSIZIO: +d["BUSTO ARSIZIO"],
+LEGNANO: +d["LEGNANO"],
+MONZA: +d["MONZA"],
+VIMERCATE: +d["VIMERCATE"],
+TREVIGLIO: +d["TREVIGLIO"],
+ROMANO_DI_LOMBARDIA: +d["ROMANO DI LOMBARDIA"],
+BRESCIA: +d["BRESCIA"],
+DESENZANO_DEL_GARDA: +d["DESENZANO DEL GARDA"],
+MAGENTA: +d["MAGENTA"],
+RHO: +d["RHO"],
+NORD_MILANO: +d["NORD MILANO"],
+MELZO: +d["MELZO"],
+CREMA: +d["CREMA"],
+ORZINUOVI: +d["ORZINUOVI"],
+MANTOVA: +d["MANTOVA"],
+CASTIGLIONE_DELLE_STIVIERE: +d["CASTIGLIONE DELLE STIVIERE"],
+VIGEVANO: +d["VIGEVANO"],
+CORSICO: +d["CORSICO"],
+MILANO: +d["MILANO"],
+SAN_DONATO_MILANESE: +d["SAN DONATO MILANESE"],
+SORESINA: +d["SORESINA"],
+LENO: +d["LENO"],
+VIADANA: +d["VIADANA"],
+OSTIGLIA: +d["OSTIGLIA"],
+VOGHERA: +d["VOGHERA"],
+PAVIA: +d["PAVIA"],
+ROZZANO: +d["ROZZANO"],
+LODI: +d["LODI"],
+CODOGNO: +d["CODOGNO"],
+CREMONA: +d["CREMONA"],
+CASALMAGGIORE: +d["CASALMAGGIORE"],
+SUZZARA: +d["SUZZARA"]                
+           }))
+return marks;
+}
+//
+//markshisto
+const MARKShisto =(data,campo)=>{
+    //console.log(data);
+    const markshisto = data.map((d,i)=>({
+        
+        x:+xVal(d,i),  
+        y:+yVal(d,i),
+        textProv:d.provD.replace(/ /g,"_"),
+        textCpi:d.cpiD
+        .replace(/ /g,"_")
+        .replace(/'/g,"a")
+        .replace(/\-/g,"t"), 
+        
+        WidthHisto :`${+d[campo]}`,
+       
+               }))
+    return markshisto;
+
+    }
+
+
+    </script>
+   
+   <!---scatterPlotRect.js-->
+   <script>
+
+    
+//funzioni da D3
+const {
+    selectAll, transition,
+    } = d3;   //scaleLinear, min, max, extent, axisBottom, axisLeft, dichiarati in histoOr
+
+
+
+
+
+
+const scatterPlotRect = (selection) => {
+//parameters
+let widthRect;
+let heightRect;
+let roundRect;
+let opacity;
+let data;
+let xPad;
+let yPad;
+let nRow;
+let nCol;
+let xOrigine;
+let yOrigine;
+let colorRect;
+let textClass;
+let textId;
+let classGeneral;
+let movimenti;
+let campo;
+let sogliaFlux;
+let sogliaFluxPc;
+let formulaEstrazioneDati;
+
+
+
+
+const my = (selection) => {
+
+
+console.log(formulaEstrazioneDati)
+
+
+
+// verifica della modifica
+//console.log('vedi dati---------------')
+//console.log(data)
+//console.log(data)
+
+//------------------------------------------------fine scale opacity
+
+//                  _ _ ______ _            
+//                 | (_)  ____| |           
+//   __   _____  __| |_| |__  | |_   ___  __
+//   \ \ / / _ \/ _` | |  __| | | | | \ \/ /
+//    \ V /  __/ (_| | | |    | | |_| |>  < 
+//     \_/ \___|\__,_|_|_|    |_|\__,_/_/\_\
+//big                       
+                       
+//funzioni di estrazione dei valori di flusso e percentuali
+
+const vediFlux = (d) => +`${d[campo]}`;
+
+const vediFluxSoglia = (d) => {let bb = Math.round(+`${d[campo]}`);
+if (bb>sogliaFlux){return (bb)}
+}
+const vediFluxPc = (d) => {let bb = Math.round(`${(d[campo]/totFluxSede)*100}`);
+                           if (bb>sogliaFluxPc){return (bb+'%')}
+                           }
+
+
+//------------------------------------fine vediflux
+
+
+//             .oooo.o  .ooooo.   .oooo.    888   .ooooo.  
+//            d88(  "8 d88' `"Y8 `P  )88b   888  d88' `88b 
+//            `"Y88b.  888        .oP"888   888  888ooo888 
+//            o.  )88b 888   .o8 d8(  888   888  888    .o 
+//            8""888P' `Y8bod8P' `Y888""8o o888o `Y8bod8P' 
+//roman
+//
+// funzione di ricodifica valore di opacity x singolo rect
+
+
+//const cpixmax = campo
+const fluxcampo = (d) =>{return +`${d[campo]}`}; ///----------nota come richiamare un campo da un nome variabile
+const massimo = max(data,fluxcampo);
+
+
+//scala opacity del colore di sfonde del quadrato
+const opacityRect2 = scaleLinear()
+.domain([sogliaFlux,massimo])//([0, 10])<-------il problema è qui
+.range([0.15, 1])
+
+const opacityRect2NoNull = (d) => {if (+opacityRect2(vediFluxSoglia(d))>0)
+                                     {return opacityRect2(vediFluxSoglia(d));}
+                                     //nel caso il valore sia indefinito
+                                  else {return +0.05;}}
+
+
+
+//scala color del testo dei valori   ASSOLUTI                                 
+const colorFontValueQuadr = scaleLinear()
+.domain([sogliaFlux,10,max(data,fluxcampo)])//([0, 10])
+//.range(["white", "green"])
+//.range(["#ff0099",'black'])
+//.range(['#ff3333','#ffffff'])
+//.range(['#ff6666','#b2b6b7','black'])
+//.range(['grey','black','black'])
+.range(['grey','white','white'])
+.clamp(true) ;
+
+//scala color del testo dei valori       ASSOLUTI                            
+const sizeFontValueQuadr = scaleLinear()
+.domain([sogliaFlux,10,max(data,fluxcampo)])//([0, 10])
+.range(['15px','20px','24px'])
+.clamp(true) ;
+
+//scala color del testo dei valori   %                                 
+const colorFontValueQuadrPc = scaleLinear()
+.domain([sogliaFlux,10,max(data,fluxcampo)])//([0, 10])
+//.range(["white", "green"])
+//.range(["#ff0099",'black'])
+//.range(['#ff3333','#ffffff'])
+//.range(['#ff6666','#b2b6b7','black'])
+//.range(['grey','black','black'])
+.range(['grey','red','red'])
+.clamp(true) ;
+
+//scala color del testo dei valori     %                         
+const sizeFontValueQuadrPc = scaleLinear()
+.domain([sogliaFlux,10,max(data,fluxcampo)])//([0, 10])
+.range(['15px','20px','24px'])
+.clamp(true) ;
+
+//-------------------------fine SCALE
+
+
+
+// transition abbreviazioni
+//es: .transition(slow)
+const slow =  transition().duration(2000)
+const fast =  transition().duration(1000)
+//--------------------------------------------------finetransition abbreviazioni
+
+
+//1° disegno dei flussi-quadri senza valori interni
+selection
+//.append('g')
+.selectAll('rect')
+.data(data)//  data)   // uso i dati trasformati qui
+
+.join(
+
+enter => enter.append('rect')
+.attr('width',widthRect)
+.attr('height',heightRect)
+.attr('rx',roundRect)   //angoli smussati
+.attr('x',(d)=>d.x)//(d,i)=> ((i % 8)* (widthRect+10)))
+.attr('y',(d)=>d.y)//(d,i)=> (Math.trunc(i/8)+1) * heightRect)
+.attr('fill',colorRect)
+.attr('opacity',d => opacityRect2NoNull(d))
+.attr('class',(d)=>textClass(d))
+.attr('id',(d)=>textId(d))
+.attr('mov',movimenti)
+.call(selection => {selection
+   .transition(slow).delay((d,i) => i*150)
+   .attr('fill','black')
+   .attr('opacity',1)
+   })
+   ,
+//update => update.remove()
+update => update.call(selection => {selection.transition()
+   .duration(2000).delay((d,i) => i*150)
+   .attr('opacity',d => opacityRect2NoNull(d))
+})
+   ,
+exit => exit.remove()
+
+)
+
+
+
+
+//   _____ ____  __  __ __  __ ______ _   _ _______  __      _______ ________          _______ 
+//  / ____/ __ \|  \/  |  \/  |  ____| \ | |__   __| \ \    / /_   _|  ____\ \        / / ____|
+// | |   | |  | | \  / | \  / | |__  |  \| |  | |     \ \  / /  | | | |__   \ \  /\  / / (___  
+// | |   | |  | | |\/| | |\/| |  __| | . ` |  | |      \ \/ /   | | |  __|   \ \/  \/ / \___ \ 
+// | |___| |__| | |  | | |  | | |____| |\  |  | |       \  /   _| |_| |____   \  /\  /  ____) |
+//  \_____\____/|_|  |_|_|  |_|______|_| \_|  |_|        \/   |_____|______|   \/  \/  |_____/
+//
+// big
+
+
+
+////// aggiungo il numero di avviamenti diretti ala sede di lavoro di BORMIO
+//console.log(`${campo}`)
+if (campo) {
+
+// cancello il titolo x fare posto ai valori totlai
+selection.selectAll('.TITOLO').remove();
+
+//totale della riga-caso-domicilio richiesta -
+var totFluxDomicilio = d3.sum(data.filter(d=> d.textCpi == campo), 
+(d)=>`${d.TOTAL}`) //totale di riga con cpi=cpi_specifico
+var totFluxDomicilioDot = numberWithDots(totFluxDomicilio)
+// totale della colonna-variabile richiesta -
+var totFluxSede = d3.sum(data, (d)=>`${d[campo]}`) //totale di colonna
+var totFluxSedeDot =numberWithDots(totFluxSede)
+//padding tra commento e valore
+padCommento = +170;
+
+//visulaizzo commenti
+//var testoTotali = TESTO().x(690).y(180)
+//    .testo('Avviamenti con DOMICILIO del lavoratore nel cpi')
+//        .classe('Totali').idTesto('CommentoDomicilio')
+//                    svg.call(testoTotali)
+
+   const testoTotali1 = TESTO_transition()
+   .x(690).y(180)
+   .xFinal(640).yFinal(50)
+   .testo('DOMICILIO - Avviamenti /')
+   .classe('totaliLegenda')
+   .idTesto('CommentoDomicilio')
+   .fontSizeInit('40px')
+   .fontSizeFinal('25px')
+   .opacityInit(1)
+   .opacityFinal(0.8)
+   .colorInit('black')
+   .colorFinal('black')
+   .duration(3000)
+   .delay(400)
+//---------------------------------------------------
+                   svg.call(testoTotali1)
+//------------------------------------------------
+//var testoTotali = TESTO().x(690).y(435)
+//.testo('Avviamenti con SEDE del lavoro nel cpi')
+//    .classe('Totali').idTesto('CommentoSede')
+const testoTotali2 = TESTO_transition()
+   .x(690).y(435)
+   .xFinal(1040).yFinal(50)
+   .testo('SEDE - Avviamenti')
+   .classe('totaliLegenda')
+   .idTesto('CommentoSede')
+   .fontSizeInit('40px')
+   .fontSizeFinal('25px')
+   .opacityInit(1)
+   .opacityFinal(0.8)
+   .colorInit('black')
+   .colorFinal('black')
+   .duration(3000)
+   .delay(400)
+//---------------------------------------------------
+               svg.call(testoTotali2)
+//---------------------------------------------------
+
+
+
+//visualizzazione totale avviamenti x domicilio e sede di lavoro
+//var testoTotali = TESTO().x(690).y(180+padCommento).testo(totFluxDomicilioDot).classe('Totali').idTesto('TotaliDomicilio')
+//                    svg.call(testoTotali)
+
+const testoTotali3 = TESTO_transition()
+                   .x(690).y(180+padCommento)
+                   .xFinal(640).yFinal(150)
+                   .testo(totFluxDomicilioDot)
+                   .classe('totaliLegenda')
+                   .idTesto('TotaliDomicilio')
+                   .fontSizeInit('200px')
+                   .fontSizeFinal('90px')
+                   .opacityInit(1)
+                   .opacityFinal(0.8)
+                   .colorInit('black')
+                   .colorFinal('black')
+                   .duration(3000)
+                   .delay(400)
+               //---------------------------------------------------
+                                   svg.call(testoTotali3)
+               //------------------------------------------------
+
+
+
+
+//var testoTotali = TESTO().x(690).y(435+padCommento).testo(totFluxSedeDot).classe('Totali').idTesto('TotaliSede')
+//svg.call(testoTotali)
+
+const testoTotali4 = TESTO_transition()
+                   .x(690).y(435+padCommento)
+                   .xFinal(1040).yFinal(150)
+                   .testo(totFluxSedeDot)
+                   .classe('totaliLegenda')
+                   .idTesto('TotaliSede')
+                   .fontSizeInit('200px')
+                   .fontSizeFinal('90px')
+                   .opacityInit(1)
+                   .opacityFinal(0.8)
+                   .colorInit('black')
+                   .colorFinal('black')
+                   .duration(3000)
+                   .delay(400)
+//---------------------------------------------------
+svg.call(testoTotali4)
+//------------------------------------------------
+//------------------------------------------------
+//------------------------------------------------
+//------------------------------------------------
+//------------------------------------------------
+//------------------------------------------------
+//------------------------------------------------
+// 
+// ███╗   ██╗██╗   ██╗███╗   ███╗██████╗ ███████╗██████╗     ██╗███╗   ██╗    ███████╗ ██████╗ ██╗   ██╗ █████╗ ██████╗ ███████╗███████╗
+// ████╗  ██║██║   ██║████╗ ████║██╔══██╗██╔════╝██╔══██╗    ██║████╗  ██║    ██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔══██╗██╔════╝██╔════╝
+// ██╔██╗ ██║██║   ██║██╔████╔██║██████╔╝█████╗  ██████╔╝    ██║██╔██╗ ██║    ███████╗██║   ██║██║   ██║███████║██████╔╝█████╗  ███████╗
+// ██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██╗██╔══╝  ██╔══██╗    ██║██║╚██╗██║    ╚════██║██║▄▄ ██║██║   ██║██╔══██║██╔══██╗██╔══╝  ╚════██║
+// ██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██████╔╝███████╗██║  ██║    ██║██║ ╚████║    ███████║╚██████╔╝╚██████╔╝██║  ██║██║  ██║███████╗███████║
+// ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝    ╚═╝╚═╝  ╚═══╝    ╚══════╝ ╚══▀▀═╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝
+                                                                                                                                      
+
+
+//FLUSSI TEXT VALORI ASSOLUTI
+
+selection
+.selectAll('.textFlussi')
+.data(data)
+.join(
+enter => enter.append('text')
+.attr('class','textFlussi')
+.attr('x',(d)=>d.x)//
+.attr('y',(d)=>d.y +25)//
+.style('fill',(d) => colorFontValueQuadr(vediFlux(d)))
+.style('font-size',(d) => sizeFontValueQuadr(vediFlux(d)))
+.call(selection => {selection
+   .transition(fast).delay((d,i) => i*80)
+   .text( d => vediFluxSoglia(d))//  
+})
+,
+update => update.call(selection => {selection
+   .transition(fast).delay((d,i) => i*80)
+   .text( d => vediFluxSoglia(d))})
+,
+exit => exit.remove(),
+
+
+)
+
+
+
+
+
+
+//FLUSSI TEXT PERCENTUALI
+
+
+////console.log(totFlux)
+//------------------------------------
+selection
+.selectAll('.textFlussiPc')
+.data(data)
+.join('text')
+////    .enter().append('text')
+.text(d=>vediFluxPc(d))
+.attr('class','textFlussiPc')
+.attr('x',(d)=>d.x)//
+.attr('y',(d)=>d.y +55)//
+.attr('opacity',1)
+.style('fill',(d) => colorFontValueQuadrPc(vediFlux(d)))
+.style('font-size',(d) => sizeFontValueQuadrPc(vediFlux(d)))
+
+}
+
+//------------------------fine numbers in squares
+
+
+
+} //+++++++++++ fine my
+
+my.formulaEstrazioneDati = function(_){return arguments.length ? ((formulaEstrazioneDati = _),my) : formulaEstrazioneDati;}
+my.campo = function(_){return arguments.length ? ((campo = _),my) : campo;}
+my.widthRect = function(_){return arguments.length ? ((widthRect = +_),my) : widthRect;}
+my.heightRect = function(_){
+   return arguments.length
+   ? ((heightRect = +_),my) : heightRect;
+}
+
+my.roundRect = function(_){
+   return arguments.length
+   ? ((roundRect = +_),my) : roundRect;
+}
+
+
+my.xPad = function(_){
+   return arguments.length
+   ? ((xPad = +_),my) : xPad;
+}
+my.yPad = function(_){
+   return arguments.length
+   ? ((yPad = +_),my) : yPad;
+}
+my.nRow = function(_){
+   return arguments.length
+   ? ((nRow = +_),my) : nRow;
+}
+my.nCol = function(_){
+   return arguments.length
+   ? ((nCol = +_),my) : nCol;
+}
+my.xOrigine = function(_){
+   return arguments.length
+   ? ((xOrigine = +_),my) : xOrigine;
+}
+my.yOrigine = function(_){
+   return arguments.length
+   ? ((yOrigine = +_),my) : yOrigine;
+}
+my.colorRect = function(_){
+   return arguments.length
+   ? ((colorRect = _),my) : colorRect;
+}
+
+my.textClass = function(_){
+   return arguments.length
+   ? ((textClass = _),my) : textClass;
+}
+my.textId = function(_){
+   return arguments.length
+   ? ((textId = _),my) : textId;
+}
+my.opacity = function(_){
+   return arguments.length
+   ? ((opacity = +_),my) : opacity;
+}
+my.classGeneral = function(_){
+   return arguments.length
+   ? ((classGeneral = _),my) : classGeneral;
+}
+
+my.movimenti = function(_){    //non usata per il momento
+   return arguments.length
+   ? ((movimenti = _),my) : movimenti;
+}
+
+my.sogliaFlux = function(_){
+   return arguments.length
+   ? ((sogliaFlux = +_),my) : sogliaFlux;
+}
+my.sogliaFluxPc = function(_){
+   return arguments.length
+   ? ((sogliaFluxPc = +_),my) : sogliaFluxPc;
+}
+
+// e data
+my.data = function(_){
+   return arguments.length
+   ? ((data = _),my) : data;
+}
+
+
+
+
+
+
+
+return my;
+} //+++++++++++fine scatterPlot
+   </script>
+   
+   <!---index.js-->
+   <script>
+//function from d3
+const { select, remove,   } = d3;
+
+//costanti
+const width = window.innerWidth;
+const height = window.innerHeight;
+const margin = {top: 20, right: 0, bottom: 0, left: 0}; //non usato ancora
+
+const rectProp = {width : 65, height : 65, round : 4}
+
+//(((((((((((((((((((((((((((((((((i dati)))))))))))))))))))))))))))))))))
+
+
+//                          vedi dati.js -> dataProv, data100
+
+
+//(((((((((((((((((( DOM manipulate ))))))))))))))))))
+
+//make tags-oggetti: svg
+
+
+//dichiarazioni
+//make tags-oggetti: svg
+const svg = select('body').select("#my_dataviz")
+    .append('svg')
+    .attr('width', width).attr('height', height);
+const svg2=svg;
+//console.log(svg)
+
+//             
+//             ██████╗  █████╗ ████████╗ █████╗       ██████╗ ███████╗ █████╗ ██████╗ 
+//             ██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗      ██╔══██╗██╔════╝██╔══██╗██╔══██╗
+//             ██║  ██║███████║   ██║   ███████║█████╗██████╔╝█████╗  ███████║██║  ██║
+//             ██║  ██║██╔══██║   ██║   ██╔══██║╚════╝██╔══██╗██╔══╝  ██╔══██║██║  ██║
+//             ██████╔╝██║  ██║   ██║   ██║  ██║      ██║  ██║███████╗██║  ██║██████╔╝
+//             ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝      ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ 
+//                                                                                    
+    
+// trasformazioni con una funzione in dati.js
+//parseRow  --->> funzioni di costruzione coordinate x e y (per posizionare i quadrati in uno schema 8x8) 
+const widthRect = rectProp.width
+const heightRect = rectProp.height
+const xPad =8 
+const nRow = 8
+const nCol =8
+const xOrigine =100
+const yOrigine =90
+//--
+const xVal =(d,i)=>(xOrigine+((i % nRow)* (widthRect+xPad)))
+const yVal =(d,i)=>(yOrigine+((Math.trunc(i/nCol)+1) * (heightRect+xPad)))
+//----
+//indirizzo dati-TUTTI I CPI della REGIONE
+const gistDataCsv = 'https://gist.githubusercontent.com/loridaniele/4e5da19f94e3c03504f2bf475de81e7c/raw/517ecd871a19851c11e1465e3aeada7aec6448b7/FLUSSI_CPI_CONTIGUI_domicilio_avviamenti_2024_lug_estraz20243010_out.csv'
+////console.log(csvUrl)
+//data = csv(gistData,parseRow)
+const marks = csv(gistDataCsv,parseRow);//, parseRow2);
+console.log(marks)
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+
+//prova
+//trovaRowObjectJson(Data,campo,ValueFind)
+//let campoCpi = 'BRENO'
+
+
+
+
+
+//fine prova
+
+//                 
+//                 ███╗   ███╗ █████╗ ██╗███╗   ██╗
+//                 ████╗ ████║██╔══██╗██║████╗  ██║
+//                 ██╔████╔██║███████║██║██╔██╗ ██║
+//                 ██║╚██╔╝██║██╔══██║██║██║╚██╗██║
+//                 ██║ ╚═╝ ██║██║  ██║██║██║ ╚████║
+//                 ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝
+//                                                 
+//                 
+
+
+//(((((((((((((((((( MAIN CODE ))))))))))))))))))
+//main: proiezione di uno scatter-plot in svg di tutti i cpi
+const main = async () => 
+    {
+        //// lettura della riga-caso  -- FUNZIONA - anche se qui non serve
+        //const rowTOcol1 = trovaRowObjectJson(await marks,'textCpi','BRENO')
+        //console.log('vedi------------->')
+        //console.log(rowTOcol1)
+
+
+
+
+
+
+    //variabile temporanea 
+    colorRect='red'
+
+
+//     ████████╗██╗████████╗██╗     ███████╗███████╗
+//     ╚══██╔══╝██║╚══██╔══╝██║     ██╔════╝██╔════╝
+//        ██║   ██║   ██║   ██║     █████╗  ███████╗
+//        ██║   ██║   ██║   ██║     ██╔══╝  ╚════██║
+//        ██║   ██║   ██║   ███████╗███████╗███████║
+//        ╚═╝   ╚═╝   ╚═╝   ╚══════╝╚══════╝╚══════╝
+                                            
+    
+
+//TITOLO e LEGENDA
+
+testoTitolo = TESTO().x(600).y(700)
+                .testo('CPI')
+                .classe('TITOLO')
+                .size('500px')
+//-----------------------------------------------
+                svg.call(testoTitolo)
+//-----------------------------------------------
+
+
+titoloSfondo1 = TESTO_transition()
+.x(100).y(100)
+.testo('2024 GEN-LUG - flussi')
+.classe('TitoloSfondo')
+.idTesto('testo1')
+.fontSizeFinal('200px')
+.opacityFinal(0.2)
+.duration(20000)
+.delay(4000)
+.colorInit('red')
+.colorFinal('black')
+.opacityInit(1)
+.xFinal(100+20)
+.yFinal(100+50)
+.fontSizeInit('10px');
+//-----------------------------------------------
+                 svg.call(titoloSfondo1)
+//-----------------------------------------------
+testoLegenda = TESTO_transition()
+.x(100).y(120)
+.xFinal(100+20).yFinal(100+50)
+.testo('Avviamenti per cpi di DOMICILIO rispetto al cpi selezionato SEDE di lavoro')
+.classe('LEGENDAsfondo')
+.idTesto('testo2')
+.fontSizeInit('10px')
+.fontSizeFinal('40px')
+.opacityInit(1)
+.opacityFinal(0.0)
+.colorInit('green')
+.colorFinal('black')
+.duration(40000)
+.delay(4000)
+
+
+
+
+
+;
+//-----------------------------------------------
+                svg.call(testoLegenda)
+//-----------------------------------------------
+testoLegenda2 = TESTO_transition()
+.x(100).y(80)
+.testo('REGIONE LOMBARDIA - flussi interni')
+.classe('LEGENDAsfondo')
+.idTesto('testo3')
+.fontSizeFinal('40px')
+.opacityFinal(0.0)
+.duration(60000)
+.delay(4000)
+.colorInit('green')
+.colorFinal('black')
+.opacityInit(1)
+.xFinal(100+20)
+.yFinal(100+20)
+.fontSizeInit('10px');
+//-----------------------------------------------
+                svg.call(testoLegenda2)
+//-----------------------------------------------
+
+//--------------------------------fine titles
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------
+
+//   
+//   ███████╗ ██████╗ ██╗   ██╗ █████╗ ██████╗ ███████╗███████╗    ███████╗██╗   ██╗███╗   ██╗ ██████╗████████╗██╗ ██████╗ ███╗   ██╗
+//   ██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔══██╗██╔════╝██╔════╝    ██╔════╝██║   ██║████╗  ██║██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║
+//   ███████╗██║   ██║██║   ██║███████║██████╔╝█████╗  ███████╗    █████╗  ██║   ██║██╔██╗ ██║██║        ██║   ██║██║   ██║██╔██╗ ██║
+//   ╚════██║██║▄▄ ██║██║   ██║██╔══██║██╔══██╗██╔══╝  ╚════██║    ██╔══╝  ██║   ██║██║╚██╗██║██║        ██║   ██║██║   ██║██║╚██╗██║
+//   ███████║╚██████╔╝╚██████╔╝██║  ██║██║  ██║███████╗███████║    ██║     ╚██████╔╝██║ ╚████║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║
+//   ╚══════╝ ╚══▀▀═╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝    ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+//                                                                                                                                   
+//---------------------------------funzione plotProv (viene lanciata sotto)
+
+    // referenzio l'oggetto  scatterPlot
+    const plotProv = scatterPlotRect() //scatterPlot(svg) //potrebbe funzionare anche così
+    
+    .data(await marks)//csv(csvUrl, parseRow))  //.data(data)
+    .widthRect(rectProp.width)
+    .heightRect(rectProp.height)
+    .roundRect(rectProp.round)
+    .opacity(0.6)
+    .xPad(8)
+    .yPad(8)
+    .nRow(8)
+    .nCol(8)
+    .xOrigine(100)
+    .yOrigine(90)
+    .colorRect(colorRect)
+    .textClass((d)=>`${d.textProv}`)
+    .textId((d)=>d.textCpi)
+    .movimenti('testo da utilizzare') //fattibile inventare una property
+    //.campoFlussi('')    
+    
+    //++++++++++++++++++++++fine oggetto scatterplot
+    
+    
+    //------------------lancio iniziale dei quadrati 
+    // ((((((((((((((((((((((((((((((((vedi svg))))))))))))))))))))))))))))))))
+         
+    
+
+                                   svg.call(plotProv)
+    
+    
+
+//-------------------------- dichiarazione funzione histo
+    //costanti- funzioni -HISTO
+
+const xValue = d => +d.WidthHisto; //da sostituire
+const yValue =d => d.textCpi.replace(/\_/g," ").replace(/a/g,"'").replace(/t/g,"-");
+const marginHisto ={top:160,right:170,left:960,bottom:20} 
+
+//
+
+const SogliaDomicilio = 20;
+const TestoTitoliHisto=`DOMICILIO lavoratore (> ${SogliaDomicilio})`
+  // funzione  HISTO orizzontale
+  const histo = HISTO()
+  .data(await marks)//marksHisto)
+  //.campo((d) => +`${d[campoCpi]}`)
+  .xtestoTitolo('70px').ytestoTitolo('440px').testoTitolo(TestoTitoliHisto).classeTitolo('Titolo_Histo')
+  .xValue(xValue)
+  .yValue(yValue)
+  .margin(marginHisto)
+  .padding_y(.1)
+  .opacityRectHisto(.3)
+  .colorRectHisto('green')//'#ff896c')
+  .sogliaFluxHisto(SogliaDomicilio)
+  //.testoTipoHisto('DOMICILIO del lavoratore (>10)')
+  //.classTipoHisto('TipoCpiDomicilio')
+  //.XtestoTipoHisto(1000)
+  //.YtestoTipoHisto(500)
+  
+
+   
+//++++++++++++++++++++++fine  dichiarazione funzione histo()
+
+//----------------------------------------dichiarazione fluxPlot
+// flux dot
+const fluxDot = plotFluxDot()
+.data(await marks)
+.widthRect(rectProp.width)
+.heightRect(rectProp.height)
+//.campo(campoCpi)
+.sogliaFluxDot(10)
+//.xStrId(xStrId)
+//.yStrId(yStrId)
+//.strId(strId)
+
+//+++++++++++++++++++++++++++++++++++++++fine dichiarazione fluxplot
+
+
+
+                      //prove 
+                      
+//---------------------particolare selezione
+const r =select("svg")
+//const s = select("#LUINO"); //esempio
+//------------------------------                    
+//------------------------------                    
+//------------------------------                    
+//------------------------------                    
+//------------------------------                    
+//------------------------------                    
+//------------------------------                    
+
+//         
+//         ███████╗███████╗████████╗   ██╗███╗   ██╗████████╗███████╗██████╗ ██╗   ██╗ █████╗ ██╗                   ██████╗ ██╗██████╗ ███████╗████████╗██╗███████╗██╗ ██████╗ ███╗   ██╗███████╗
+//         ██╔════╝██╔════╝╚══██╔══╝   ██║████╗  ██║╚══██╔══╝██╔════╝██╔══██╗██║   ██║██╔══██╗██║                   ██╔══██╗██║██╔══██╗██╔════╝╚══██╔══╝██║╚══███╔╝██║██╔═══██╗████╗  ██║██╔════╝
+//         ███████╗█████╗     ██║█████╗██║██╔██╗ ██║   ██║   █████╗  ██████╔╝██║   ██║███████║██║         █████╗    ██████╔╝██║██████╔╝█████╗     ██║   ██║  ███╔╝ ██║██║   ██║██╔██╗ ██║█████╗  
+//         ╚════██║██╔══╝     ██║╚════╝██║██║╚██╗██║   ██║   ██╔══╝  ██╔══██╗╚██╗ ██╔╝██╔══██║██║         ╚════╝    ██╔══██╗██║██╔═══╝ ██╔══╝     ██║   ██║ ███╔╝  ██║██║   ██║██║╚██╗██║██╔══╝  
+//         ███████║███████╗   ██║      ██║██║ ╚████║   ██║   ███████╗██║  ██║ ╚████╔╝ ██║  ██║███████╗              ██║  ██║██║██║     ███████╗   ██║   ██║███████╗██║╚██████╔╝██║ ╚████║███████╗
+//         ╚══════╝╚══════╝   ╚═╝      ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚══════╝              ╚═╝  ╚═╝╚═╝╚═╝     ╚══════╝   ╚═╝   ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+//                                                                                                                                                                                              
+   //// (((((((((((((((((ANIMAZIONE-ripetizione)))))))))))))))))
+   ////                   OKKIO AL NOME DEL PLOT
+   let i=0; 
+   let strIdPrecedente='vuoto';
+   setInterval(() =>{
+
+
+
+
+
+
+ //   
+//
+ //   ███████╗████████╗██████╗ ██╗██████╗            ██╗  ██╗███████╗████████╗██████╗ ██╗██████╗            ██╗   ██╗███████╗████████╗██████╗ ██╗██████╗ 
+ //   ██╔════╝╚══██╔══╝██╔══██╗██║██╔══██╗           ╚██╗██╔╝██╔════╝╚══██╔══╝██╔══██╗██║██╔══██╗           ╚██╗ ██╔╝██╔════╝╚══██╔══╝██╔══██╗██║██╔══██╗
+ //   ███████╗   ██║   ██████╔╝██║██║  ██║            ╚███╔╝ ███████╗   ██║   ██████╔╝██║██║  ██║            ╚████╔╝ ███████╗   ██║   ██████╔╝██║██║  ██║
+ //   ╚════██║   ██║   ██╔══██╗██║██║  ██║            ██╔██╗ ╚════██║   ██║   ██╔══██╗██║██║  ██║             ╚██╔╝  ╚════██║   ██║   ██╔══██╗██║██║  ██║
+ //   ███████║   ██║   ██║  ██║██║██████╔╝▄█╗        ██╔╝ ██╗███████║   ██║   ██║  ██║██║██████╔╝▄█╗           ██║   ███████║   ██║   ██║  ██║██║██████╔╝
+ //   ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═════╝ ╚═╝        ╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═════╝ ╚═╝           ╚═╝   ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═════╝ 
+ //                                                                                                                                                     
+
+ 
+//nodelist  con mouse :hover 
+var nodeElements = document.querySelectorAll(':hover');
+var [strId,xStrId,yStrId]= trovaIdXY(nodeElements)
+//console.log(strId +" "+strClass+" "+xStrId+" "+yStrId)
+
+//verifico il mouse hover su un rettangolo ed escludo di ripetere se già si trova sullo stesso
+if ((strId &&  strIdPrecedente != strId)){
+
+    //cambio-strIdPrecedente --------------------x evitare ripetizioni
+    strIdPrecedente = strId;
+    //
+    const xValueFlussi = (d) => +`${d[campoCpi]}`; //in histo e fluxDots inserisco direttamente la formula di estrazione dati
+    campoCpi = strId;//x la chiarezza    //.replace(/\_/g," ")
+    //------------------------------------------------------------
+    //------------------------------------------------------------
+    //------------------------------------------------------------
+    //------------------------------------------------------------
+    //------------------------------------------------------------
+
+  // ██████╗  ██████╗ ██╗    ██╗       ██████╗ █████╗ ███████╗ ██████╗     ██████╗ ███████╗ █████╗ ██████╗ 
+  // ██╔══██╗██╔═══██╗██║    ██║      ██╔════╝██╔══██╗██╔════╝██╔═══██╗    ██╔══██╗██╔════╝██╔══██╗██╔══██╗
+  // ██████╔╝██║   ██║██║ █╗ ██║█████╗██║     ███████║███████╗██║   ██║    ██████╔╝█████╗  ███████║██║  ██║
+  // ██╔══██╗██║   ██║██║███╗██║╚════╝██║     ██╔══██║╚════██║██║   ██║    ██╔══██╗██╔══╝  ██╔══██║██║  ██║
+  // ██║  ██║╚██████╔╝╚███╔███╔╝      ╚██████╗██║  ██║███████║╚██████╔╝    ██║  ██║███████╗██║  ██║██████╔╝
+  // ╚═╝  ╚═╝ ╚═════╝  ╚══╝╚══╝        ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝     ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ 
+  //                                                                                                      
+
+
+    (async () => {     //async ANONIMA  - wrap (avvolgitura) della funzione con lettura dati 'await' ---> non funziona diversamente perchè i dati rimarrebbero in 'promise' e non verrebbero letti
+        const rowTOcol1 = trovaRowObjectJson(await marks,'textCpi',campoCpi)
+        console.log('vedi------------->')
+        console.log(rowTOcol1)
+        })();
+
+
+    
+//-------------------------------------------------
+//-------------------------------------------------
+//-------------------------------------------------
+//-------------------------------------------------
+//-------------------------------------------------
+
+//        ███████╗ ██████╗ ██╗   ██╗ █████╗ ██████╗ ███████╗███████╗    ██╗   ██╗██╗███████╗██╗    ██╗
+//        ██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔══██╗██╔════╝██╔════╝    ██║   ██║██║██╔════╝██║    ██║
+//        ███████╗██║   ██║██║   ██║███████║██████╔╝█████╗  ███████╗    ██║   ██║██║█████╗  ██║ █╗ ██║
+//        ╚════██║██║▄▄ ██║██║   ██║██╔══██║██╔══██╗██╔══╝  ╚════██║    ╚██╗ ██╔╝██║██╔══╝  ██║███╗██║
+//        ███████║╚██████╔╝╚██████╔╝██║  ██║██║  ██║███████╗███████║     ╚████╔╝ ██║███████╗╚███╔███╔╝
+//        ╚══════╝ ╚══▀▀═╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝      ╚═══╝  ╚═╝╚══════╝ ╚══╝╚══╝ 
+//                                                                                                   
+
+    //
+    svg.call(plotProv)
+    
+
+
+
+    //------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------
+   // //------------------------------------------------------------------------------------
+   // ██╗   ██╗██╗███████╗██╗    ██╗    ██████╗ ██████╗  ██████╗ ██╗   ██╗       ██████╗██████╗ ██╗
+   // ██║   ██║██║██╔════╝██║    ██║    ██╔══██╗██╔══██╗██╔═══██╗██║   ██║      ██╔════╝██╔══██╗██║
+   // ██║   ██║██║█████╗  ██║ █╗ ██║    ██████╔╝██████╔╝██║   ██║██║   ██║█████╗██║     ██████╔╝██║
+   // ╚██╗ ██╔╝██║██╔══╝  ██║███╗██║    ██╔═══╝ ██╔══██╗██║   ██║╚██╗ ██╔╝╚════╝██║     ██╔═══╝ ██║
+   //  ╚████╔╝ ██║███████╗╚███╔███╔╝    ██║     ██║  ██║╚██████╔╝ ╚████╔╝       ╚██████╗██║     ██║
+   //   ╚═══╝  ╚═╝╚══════╝ ╚══╝╚══╝     ╚═╝     ╚═╝  ╚═╝ ╚═════╝   ╚═══╝         ╚═════╝╚═╝     ╚═╝
+   //                                                                                             
+//
+    
+    // x evitare problemi di lettura l'ID di tutti i cpi/province è stato modificato 
+    // --> vedi scatterPlotRect linea 48/51 
+    //x visualizzare il nome del cpi/province partendo dall'id --> replace di quelle modifiche
+    
+    //cerco nome provincia//recupero la classe
+    var prov = r.select(`rect#${strId}`).attr('class')
+    var prov = prov.replace(/_/g," ")
+    //-------------------------------------------
+    let cpi = strId.replace(/\_/g," ")
+    .replace(/a/g,"'")
+    .replace(/t/g,"-")
+    //-----------------------------------------------------------------------------------------
+    //stampo nome cpi e provincia
+    var testoCpi = TESTO().x(100).y(110).testo(cpi).classe('nomeCpi').opacity(.5)
+                    svg.call(testoCpi)//.data(marks)
+    var SedeDomicilio = TESTO().x(270).y(140).testo('SEDE di lavoro').classe('TipoCpiSede').opacity(.5).size(30)
+                    svg.call(SedeDomicilio)
+
+    var testoProv = TESTO().x(100).y(120).testo(prov).classe('nomeProv')
+                    svg.call(testoProv)
+//------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------
+  // cambio il plot
+ // 
+ // ███╗   ██╗██╗   ██╗███╗   ███╗██████╗ ███████╗██████╗     ██╗███╗   ██╗    ███████╗ ██████╗ ██╗   ██╗ █████╗ ██████╗ ███████╗███████╗
+ // ████╗  ██║██║   ██║████╗ ████║██╔══██╗██╔════╝██╔══██╗    ██║████╗  ██║    ██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔══██╗██╔════╝██╔════╝
+ // ██╔██╗ ██║██║   ██║██╔████╔██║██████╔╝█████╗  ██████╔╝    ██║██╔██╗ ██║    ███████╗██║   ██║██║   ██║███████║██████╔╝█████╗  ███████╗
+ // ██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██╗██╔══╝  ██╔══██╗    ██║██║╚██╗██║    ╚════██║██║▄▄ ██║██║   ██║██╔══██║██╔══██╗██╔══╝  ╚════██║
+ // ██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██████╔╝███████╗██║  ██║    ██║██║ ╚████║    ███████║╚██████╔╝╚██████╔╝██║  ██║██║  ██║███████╗███████║
+ // ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝    ╚═╝╚═╝  ╚═══╝    ╚══════╝ ╚══▀▀═╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝
+                                                                                                                                       
+
+  var testoFlussi = plotProv.campo(campoCpi).formulaEstrazioneDati(xValueFlussi).sogliaFlux(0).sogliaFluxPc(0)
+  svg.call(testoFlussi)
+
+  
+//------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------
+//               
+//                 ██╗  ██╗██╗███████╗████████╗ ██████╗ 
+//                 ██║  ██║██║██╔════╝╚══██╔══╝██╔═══██╗
+//                 ███████║██║███████╗   ██║   ██║   ██║
+//                 ██╔══██║██║╚════██║   ██║   ██║   ██║
+//                 ██║  ██║██║███████║   ██║   ╚██████╔╝
+//                 ╚═╝  ╚═╝╚═╝╚══════╝   ╚═╝    ╚═════╝ 
+//                                                     
+
+
+
+  //dati prova x histo
+   //dati prova - marksHisto = MARKShisto(data,campoFlussi)    //zero e zero non importa ricostruire la posizione del quadrato<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+   // marksHisto=[{"WidthHisto":150,"textCpi":"Como"},{"WidthHisto":250,"textCpi":"Luino"},{"WidthHisto":50,"textCpi":"Breno"}]
+   
+                  histoCpi = histo.campo(xValueFlussi)
+                  svg.call(histoCpi)
+
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
+  
+   //           ███████╗██╗     ██╗   ██╗██╗  ██╗    ██████╗  ██████╗ ████████╗███████╗    ██████╗ ██╗      ██████╗ ████████╗
+   //           ██╔════╝██║     ██║   ██║╚██╗██╔╝    ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝    ██╔══██╗██║     ██╔═══██╗╚══██╔══╝
+   //           █████╗  ██║     ██║   ██║ ╚███╔╝     ██║  ██║██║   ██║   ██║   ███████╗    ██████╔╝██║     ██║   ██║   ██║   
+   //           ██╔══╝  ██║     ██║   ██║ ██╔██╗     ██║  ██║██║   ██║   ██║   ╚════██║    ██╔═══╝ ██║     ██║   ██║   ██║   
+   //           ██║     ███████╗╚██████╔╝██╔╝ ██╗    ██████╔╝╚██████╔╝   ██║   ███████║    ██║     ███████╗╚██████╔╝   ██║   
+   //           ╚═╝     ╚══════╝ ╚═════╝ ╚═╝  ╚═╝    ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝    ╚═╝     ╚══════╝ ╚═════╝    ╚═╝   
+   //                                                                                                                        
+
+   
+
+                               fluxDotCpi = fluxDot.campo(xValueFlussi)
+                                                   .xStrId(xStrId)
+                                                   .yStrId(yStrId)
+                                                   .strId(strId)
+                                                   //--------------------
+                                                   svg.call(fluxDotCpi)
+
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
+
+
+}
+//-----------------------------------fine mouse hover
+
+   i++;
+   },2000); //5000
+//+++++FINE ANIMAZIONE fine setInterval
+//
+
+    } //+++++++++++++++++++fine main
+//((((((((((((((((( lancio la 'main' )))))))))))))))))
+//la funzione dichiarata (codice principale di proiezione)
+                    main()
+////////////////////////////////////////////////////
+
+
+   </script>
+   
+</html>
